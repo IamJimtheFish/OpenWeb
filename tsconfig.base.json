@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": ".",
+    "paths": {
+      "@webx/types": ["packages/types/src/index.ts"],
+      "@webx/core": ["packages/core/src/index.ts"],
+      "@webx/store": ["packages/store/src/index.ts"],
+      "@webx/searxng": ["packages/searxng/src/index.ts"],
+      "@webx/browser": ["packages/browser/src/index.ts"],
+      "@webx/crawler": ["packages/crawler/src/index.ts"],
+      "@webx/api": ["packages/api/src/index.ts"],
+      "@webx/mcp": ["packages/mcp/src/index.ts"],
+      "@webx/cli": ["packages/cli/src/index.ts"]
+    },
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "dist"
+  }
+}

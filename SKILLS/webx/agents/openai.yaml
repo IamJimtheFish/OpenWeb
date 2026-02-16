@@ -1,0 +1,4 @@
+interface:
+  display_name: "WebX Fresh"
+  short_description: "Use local WebX Fresh MCP tools"
+  default_prompt: "Use WebX Fresh tools (webx.search, webx.open, webx.actions.list/execute, webx.session.*, webx.crawl.*, webx.store.query). Prefer static compact opens first; escalate to Playwright only when needed; require explicit user approval for irreversible actions."

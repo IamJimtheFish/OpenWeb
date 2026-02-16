@@ -1,0 +1,18 @@
+{
+  "name": "@webx/browser",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@webx/core": "workspace:*",
+    "@webx/store": "workspace:*",
+    "@webx/types": "workspace:*",
+    "playwright": "^1.54.2"
+  }
+}

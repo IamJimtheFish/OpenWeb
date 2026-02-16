@@ -1,0 +1,9 @@
+node_modules
+dist
+coverage
+.data
+data/*.sqlite
+data/artifacts/*
+!data/artifacts/.gitkeep
+data/sessions/*
+!data/sessions/.gitkeep

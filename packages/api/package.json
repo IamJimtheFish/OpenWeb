@@ -1,0 +1,22 @@
+{
+  "name": "@webx/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "start": "tsx src/server.ts"
+  },
+  "dependencies": {
+    "@webx/browser": "workspace:*",
+    "@webx/core": "workspace:*",
+    "@webx/crawler": "workspace:*",
+    "@webx/searxng": "workspace:*",
+    "@webx/store": "workspace:*",
+    "@webx/types": "workspace:*",
+    "express": "^4.21.2"
+  }
+}

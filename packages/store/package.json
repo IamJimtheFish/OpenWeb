@@ -1,0 +1,16 @@
+{
+  "name": "@webx/store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@webx/types": "workspace:*",
+    "better-sqlite3": "^11.10.0"
+  }
+}
