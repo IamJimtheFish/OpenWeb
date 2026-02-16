@@ -35,8 +35,8 @@ if [[ $CONFIGURE_MCP -eq 1 ]]; then
   mkdir -p "$CODEX_HOME"
   touch "$CONFIG_PATH"
 
-  if rg -n "^\[mcp_servers\.(openweb|webx_fresh)\]" "$CONFIG_PATH" >/dev/null 2>&1; then
-    echo "[install] MCP server config already exists: mcp_servers.openweb or mcp_servers.webx_fresh"
+  if rg -n "^\[mcp_servers\.openweb\]" "$CONFIG_PATH" >/dev/null 2>&1; then
+    echo "[install] MCP server config already exists: mcp_servers.openweb"
   else
     cat >> "$CONFIG_PATH" <<CFG
 
@@ -45,6 +45,9 @@ command = "corepack"
 args = ["pnpm", "--dir", "$REPO_ROOT", "mcp"]
 CFG
     echo "[install] appended MCP config to $CONFIG_PATH"
+    if rg -n "^\[mcp_servers\.webx_fresh\]" "$CONFIG_PATH" >/dev/null 2>&1; then
+      echo "[install] note: legacy mcp_servers.webx_fresh still exists; you can keep or remove it."
+    fi
   fi
 fi
 
