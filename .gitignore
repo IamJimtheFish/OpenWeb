@@ -3,6 +3,8 @@ dist
 coverage
 .data
 data/*.sqlite
+data/*.sqlite-shm
+data/*.sqlite-wal
 data/artifacts/*
 !data/artifacts/.gitkeep
 data/sessions/*
