@@ -156,7 +156,10 @@ export const CrawlOptionsSchema = z.object({
   allowDomains: z.array(z.string()).optional(),
   denyDomains: z.array(z.string()).optional(),
   respectRobots: z.boolean().default(true),
-  perDomainDelayMs: z.number().int().min(0).default(500)
+  perDomainDelayMs: z.number().int().min(0).default(500),
+  seedFromSitemaps: z.boolean().default(true),
+  maxSitemapUrls: z.number().int().min(0).max(2000).default(200),
+  adaptiveDelay: z.boolean().default(true)
 });
 
 export const CrawlStartInputSchema = z.object({

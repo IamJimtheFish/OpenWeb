@@ -16,6 +16,18 @@ It provides:
 - Reusable memory: crawl once, query stored pages later.
 - Portable interface: same tool surface via MCP and HTTP API.
 
+## Crawler Improvements
+
+OpenWeb crawler is tuned for high-signal, low-token domain crawling:
+- deterministic queue dedupe per job (`job_id + normalized URL`)
+- URL normalization (tracking params/fragments removed, canonicalized ordering)
+- nuisance/non-HTML URL filtering before enqueue
+- robots-aware crawling (Allow/Disallow + crawl-delay handling)
+- sitemap seeding from `robots.txt` and `sitemap.xml`/sitemap indexes
+- priority scoring for discovered links (depth/path/seed relevance)
+- adaptive politeness delay based on observed domain latency
+- unchanged-page skip (content hash check against latest stored page)
+
 ## Components
 
 - API server: `packages/api`
@@ -68,6 +80,14 @@ When the skill is active, Codex should follow this pattern:
 3. Escalate to Playwright only when needed
 4. For interactions: `webx.actions.list` then `webx.actions.execute`
 5. For repeated domains: `webx.crawl.start/status/next` and `webx.store.query`
+
+### Crawl Options (high impact)
+
+- `respectRobots` (default `true`)
+- `perDomainDelayMs` (default `500`)
+- `seedFromSitemaps` (default `true`)
+- `maxSitemapUrls` (default `200`)
+- `adaptiveDelay` (default `true`)
 
 ## Data Paths
 

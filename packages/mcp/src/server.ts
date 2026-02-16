@@ -120,7 +120,10 @@ export async function startMcpServer(): Promise<void> {
           allowDomains: z.array(z.string()).optional(),
           denyDomains: z.array(z.string()).optional(),
           respectRobots: z.boolean().optional(),
-          perDomainDelayMs: z.number().int().optional()
+          perDomainDelayMs: z.number().int().optional(),
+          seedFromSitemaps: z.boolean().optional(),
+          maxSitemapUrls: z.number().int().optional(),
+          adaptiveDelay: z.boolean().optional()
         })
         .optional()
     },

@@ -92,6 +92,7 @@ export class WebxStore {
         FOREIGN KEY(job_id) REFERENCES crawl_jobs(id)
       );
       CREATE INDEX IF NOT EXISTS idx_crawl_queue_job_status ON crawl_queue(job_id, status, next_fetch_at);
+      CREATE UNIQUE INDEX IF NOT EXISTS idx_crawl_queue_job_url ON crawl_queue(job_id, url);
 
       CREATE TABLE IF NOT EXISTS sessions (
         name TEXT PRIMARY KEY,
@@ -273,7 +274,7 @@ export class WebxStore {
 
   enqueueUrl(jobId: string, url: string, depth: number, priority: number): void {
     const domain = new URL(url).hostname;
-    const id = this.makeId(`${jobId}:${url}`);
+    const id = this.stableId(`${jobId}:${url}`);
     this.db
       .prepare(
         `
@@ -441,6 +442,10 @@ export class WebxStore {
 
   private makeId(seed: string): string {
     return this.hash(`${seed}:${Date.now()}`);
+  }
+
+  private stableId(seed: string): string {
+    return this.hash(seed);
   }
 
   private hash(input: string): string {
