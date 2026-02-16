@@ -5,7 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 SOURCE_SKILL_DIR="$REPO_ROOT/SKILLS/webx"
 CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
-TARGET_SKILL_DIR="$CODEX_HOME/skills/webx-fresh"
+TARGET_SKILL_DIR="$CODEX_HOME/skills/openweb"
 CONFIG_PATH="$CODEX_HOME/config.toml"
 CONFIGURE_MCP=0
 
@@ -35,12 +35,12 @@ if [[ $CONFIGURE_MCP -eq 1 ]]; then
   mkdir -p "$CODEX_HOME"
   touch "$CONFIG_PATH"
 
-  if rg -n "^\[mcp_servers\.webx_fresh\]" "$CONFIG_PATH" >/dev/null 2>&1; then
-    echo "[install] MCP server config already exists: mcp_servers.webx_fresh"
+  if rg -n "^\[mcp_servers\.(openweb|webx_fresh)\]" "$CONFIG_PATH" >/dev/null 2>&1; then
+    echo "[install] MCP server config already exists: mcp_servers.openweb or mcp_servers.webx_fresh"
   else
     cat >> "$CONFIG_PATH" <<CFG
 
-[mcp_servers.webx_fresh]
+[mcp_servers.openweb]
 command = "corepack"
 args = ["pnpm", "--dir", "$REPO_ROOT", "mcp"]
 CFG

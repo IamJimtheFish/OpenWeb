@@ -18,7 +18,7 @@ function asToolResponse(payload: unknown) {
 
 export async function startMcpServer(): Promise<void> {
   const server = new McpServer({
-    name: "webx",
+    name: "openweb",
     version: "0.1.0"
   });
 

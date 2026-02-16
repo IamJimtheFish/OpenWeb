@@ -1,4 +1,4 @@
-# AGENTS.md — WebX Fresh (TypeScript, SQLite, Playwright, SearXNG, MCP, Codex Skill)
+# AGENTS.md — OpenWeb (TypeScript, SQLite, Playwright, SearXNG, MCP, Codex Skill)
 
 This repo builds a local TypeScript system that lets an LLM use the internet like a human, but with low-token structured outputs. It provides token-efficient web search + open + bloat reduction, a high-effectiveness crawler, and Playwright/Chromium sessions as a safeguard for JS/login/actions. It exposes everything through MCP tools (portable), with a Codex Skill wrapper for orchestration.
 

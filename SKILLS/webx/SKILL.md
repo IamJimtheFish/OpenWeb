@@ -1,13 +1,13 @@
 ---
-name: webx-fresh
+name: openweb
 description: >
-  Use the local WebX Fresh stack in /home/tomas/webx to do low-token web tasks through
+  Use the local OpenWeb stack in /home/tomas/webx to do low-token web tasks through
   MCP tools: search, open pages, list/execute actions, manage browser sessions, crawl
   domains, and query stored pages. Use for browsing workflows, doc/news summarization,
   and authenticated site interactions with explicit confirmation before risky actions.
 ---
 
-# WebX Fresh
+# OpenWeb
 
 ## When To Use
 - User asks to browse/search/extract from websites.

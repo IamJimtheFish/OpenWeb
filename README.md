@@ -47,17 +47,17 @@ From repo root:
 ```
 
 What this does:
-1. Links skill folder to `~/.codex/skills/webx-fresh`
-2. Adds MCP server entry `mcp_servers.webx_fresh` to `~/.codex/config.toml`
+1. Links skill folder to `~/.codex/skills/openweb`
+2. Adds MCP server entry `mcp_servers.openweb` to `~/.codex/config.toml`
 
 ## Start / Verify / Stop
 
 Use the installed skill scripts:
 
 ```bash
-~/.codex/skills/webx-fresh/scripts/webx-up.sh
-~/.codex/skills/webx-fresh/scripts/webx-verify.sh
-~/.codex/skills/webx-fresh/scripts/webx-down.sh
+~/.codex/skills/openweb/scripts/webx-up.sh
+~/.codex/skills/openweb/scripts/webx-verify.sh
+~/.codex/skills/openweb/scripts/webx-down.sh
 ```
 
 ## How It Works In Codex
