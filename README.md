@@ -1,6 +1,6 @@
-# WebX Fresh
+# OpenWeb
 
-WebX Fresh is a local TypeScript web-automation stack for LLM agents.
+OpenWeb is a local TypeScript web-automation stack for LLM agents.
 
 It provides:
 - low-token web search and page extraction,
